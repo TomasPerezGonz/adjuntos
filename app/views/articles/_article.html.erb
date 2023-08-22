@@ -3,10 +3,17 @@
     <strong>Title:</strong>
     <%= article.title %>
   </p>
-
   <p>
     <strong>Body:</strong>
     <%= article.body %>
   </p>
-
+  <p>
+    <strong>Foto:</strong>
+    <%#= image_tag article.foto, style: "width: 100px" if article.foto.attached? %>
+    <% if article.foto.attached? %>
+      <%= image_tag article.foto.variant(:index) %>
+    <% else %>
+      No hay imagen
+    <% end %>
+  </p>
 </div>
